@@ -21,6 +21,24 @@ const initialState: LeaderBoardState = {
   milliseconds: "",
 };
 
+function timeToMilliseconds(time: {
+  minutes: string;
+  seconds: string;
+  milliseconds: string;
+}): number {
+  return (
+    parseInt(time.minutes, 10) * 60 * 1000 +
+    parseInt(time.seconds, 10) * 1000 +
+    parseInt(time.milliseconds, 10)
+  );
+}
+
+function sortPlayers(players: UserNameAndScore[]): UserNameAndScore[]{
+  return players.sort((a, b) => {
+    return timeToMilliseconds(a) - timeToMilliseconds(b);
+  });
+}
+
 export const leaderBoardReducer = (
   state = initialState,
   action: Action
@@ -30,7 +48,7 @@ export const leaderBoardReducer = (
       if (Array.isArray(action.payload)) {
         return {
           ...state,
-          playersScoreData: [...state.playersScoreData, ...action.payload],
+          playersScoreData: sortPlayers([...state.playersScoreData, ...action.payload]),
         };
       }
       break;
@@ -57,5 +75,5 @@ export const leaderBoardReducer = (
     default:
       return state;
   }
-  return state; // Default return in case of type mismatch
+  return state;
 };

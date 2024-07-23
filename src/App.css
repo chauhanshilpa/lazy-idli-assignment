@@ -4,7 +4,7 @@ body {
   background-color: black;
 }
 
-.leaderboard{
+.leaderboard {
   height: 100%;
 }
 
@@ -73,17 +73,41 @@ body {
   border-radius: 5px 5px 50px 5px;
 }
 
+.scoreRow:first-child {
+  background-color: gold;
+  color: black;
+}
+
+.scoreRow:nth-child(2) {
+  background-color: silver;
+  color: black;
+}
+
+.scoreRow:nth-child(3) {
+  background-color: #cd7f32;
+}
+
+.scoreRow .item {
+  font-size: x-large;
+  font-weight: 900;
+}
+
+.scoreRow .left,
+.scoreRow .right {
+  display: flex;
+  width: 100%;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
 .item.serial-number {
   padding: 0px 8px;
   margin-right: 2rem;
   background-color: white;
   color: black;
   border-bottom-right-radius: 8px;
-}
-
-.scoreRow .item {
-  font-size: large;
-  font-weight: 700;
 }
 
 .score-row-inputs {

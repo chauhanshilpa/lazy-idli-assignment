@@ -20,11 +20,11 @@ const ScoreRow = ({ data, index }: Props) => {
 
   return (
     <div className="scoreRow">
-      <div>
+      <div className="left">
         <span className="item serial-number">{index + 1}</span>
         <span className="item player-name">{data.playerName}</span>
       </div>
-      <div>
+      <div className="right">
         {/* prize */}
         <span className="item time">
           {data.minutes}:{data.seconds}:{data.milliseconds}
