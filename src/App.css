@@ -1,4 +1,115 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-color: black;
+}
+
+.leaderboard{
+  height: 100%;
+}
+
+.container {
+  width: 90%;
+  padding: 1px;
+  margin: auto;
+}
+
+.top-heading {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f7f3ec;
+  text-shadow: 0 0 0.15em #e9910f;
+  margin: 20px 0;
+  position: relative;
+}
+
+.top-heading::before,
+.top-heading::after {
+  content: "";
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.top-heading::before {
+  margin-left: 20px;
+}
+
+.top-heading::after {
+  margin-right: 20px;
+}
+
+.top-heading::before,
+.top-heading::after {
+  background-image: linear-gradient(
+    to bottom,
+    #ffd700,
+    #ffd700 1px,
+    transparent 1px,
+    transparent 5px,
+    #ffd700 5px,
+    #ffd700 6px,
+    transparent 6px,
+    transparent 10px,
+    #ffd700 10px,
+    #ffd700 11px
+  );
+  background-size: 100% 11px;
+  height: 11px;
+}
+
+.scoreRow {
+  padding: 2px 1.5rem 2px 2px;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 0.5rem 0px;
+  border: 1px solid gray;
+  border-radius: 5px 5px 50px 5px;
+}
+
+.item.serial-number {
+  padding: 0px 8px;
+  margin-right: 2rem;
+  background-color: white;
+  color: black;
+  border-bottom-right-radius: 8px;
+}
+
+.scoreRow .item {
+  font-size: large;
+  font-weight: 700;
+}
+
+.score-row-inputs {
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  bottom: 10px;
+}
+
+input {
+  padding: 1rem;
+  font-size: large;
+  font-weight: 700;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  background-color: rgb(246, 246, 246);
+}
+
+.score-container {
+  background-image: url("./assets/leaderboard-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: auto;
+  height: 23rem;
 }
