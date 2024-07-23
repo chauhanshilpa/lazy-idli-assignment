@@ -2,6 +2,7 @@ import { useLeaderBoardSelector } from "./hooks";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actionCreators from "../redux/action-creators/index";
+import sound from "../assets/scoreAdded.wav";
 
 const Input = () => {
   const { playerName, minutes, seconds, milliseconds } =
@@ -32,6 +33,8 @@ const Input = () => {
         milliseconds: formattedMilliseconds,
       },
     ]);
+    const audio = new Audio(sound);
+    audio.play()
     setPlayerName("");
     setMinutes("");
     setSeconds("");
