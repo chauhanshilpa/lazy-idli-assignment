@@ -12,7 +12,6 @@ const ScoreRow = ({ data, index }: Props) => {
         <span className="item player-name">{data.playerName}</span>
       </div>
       <div className="right">
-        {/* prize */}
         <span className="item prize-money">
           {index === 0
             ? "50000"
