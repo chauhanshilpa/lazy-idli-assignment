@@ -2,9 +2,10 @@ import "./App.css";
 import ScoreRow from "./components/ScoreRow";
 import Input from "./components/Input";
 import { useLeaderBoardSelector } from "./components/hooks";
+import footer_image from "./assets/footer-image.png";
 
 function App() {
-  const { playersScoreData } = useLeaderBoardSelector()
+  const { playersScoreData } = useLeaderBoardSelector();
 
   return (
     <div className="leaderboard">
@@ -17,6 +18,14 @@ function App() {
         </div>
       </div>
       <Input />
+      <div className="footer-parent">
+        <div className="footer-element primary">
+          <img src={footer_image} alt="footer-image" />
+        </div>
+        <div className="footer-element secondary">
+          <img src={footer_image} alt="footer-image" />
+        </div>
+      </div>
     </div>
   );
 }

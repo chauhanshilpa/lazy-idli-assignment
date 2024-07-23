@@ -1,23 +1,10 @@
-import { useRef, useEffect } from "react";
 import { UserNameAndScore } from "../constants";
-import { useLeaderBoardSelector } from "./hooks";
-
 interface Props {
   data: UserNameAndScore;
   index: number;
 }
 
 const ScoreRow = ({ data, index }: Props) => {
-  const bottomRowRef = useRef<HTMLDivElement>(null);
-
-    const { playersScoreData } = useLeaderBoardSelector();
-
-  const scrollToLastRow = () => {
-    bottomRowRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(scrollToLastRow, [playersScoreData]);
-
   return (
     <div className="scoreRow">
       <div className="left">
@@ -26,11 +13,19 @@ const ScoreRow = ({ data, index }: Props) => {
       </div>
       <div className="right">
         {/* prize */}
+        <span className="item prize-money">
+          {index === 0
+            ? "50000"
+            : index === 1
+            ? "5000"
+            : index === 2
+            ? "500"
+            : null}
+        </span>
         <span className="item time">
           {data.minutes}:{data.seconds}:{data.milliseconds}
         </span>
       </div>
-      <div ref={bottomRowRef}></div>
     </div>
   );
 };
