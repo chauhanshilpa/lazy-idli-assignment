@@ -114,15 +114,18 @@ body {
   margin: 1rem auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   bottom: 10px;
+
 }
 
 input {
-  padding: 1rem;
+  padding: 0.7rem;
   font-size: large;
   font-weight: 700;
   border: none;
+  margin: 5px 2px;
+  border-radius: 2px;
 }
 
 input:focus {
@@ -136,4 +139,25 @@ input:focus {
   background-size: cover;
   overflow-y: auto;
   height: 23rem;
+}
+
+.score-container::-webkit-scrollbar {
+  width: 4px;
+  scroll-behavior: smooth;
+}
+
+/* Track */
+.score-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  scroll-behavior: smooth;
+}
+
+.score-container::-webkit-scrollbar-thumb {
+  background: rgb(146, 223, 146);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.score-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(167, 166, 166);
 }

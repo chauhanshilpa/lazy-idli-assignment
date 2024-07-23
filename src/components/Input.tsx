@@ -74,7 +74,7 @@ const Input = () => {
         value={milliseconds}
         onChange={(event) => setMilliseconds(event.target.value)}
       />
-     <input type="submit" value="Submit"></input>
+     <input type="submit" value="Submit"/>
     </form>
   );
 };
